@@ -1,0 +1,40 @@
+openapi: 3.0.3
+info:
+    title: Hello API
+    description: Defines an example “Hello World” API
+    version: '0.0.1'
+
+servers:
+    - url: 'https://f7c60o1cml.execute-api.ap-northeast-1.amazonaws.com/prod'
+      description: '本番環境'
+
+paths:
+    '/test':
+        get:
+            operationId: sayHello
+            summary: Say Hello
+            description: Prints out a greeting
+            parameters:
+                - name: name
+                  in: query
+                  required: false
+                  schema:
+                      type: string
+                      default: 'World'
+            responses:
+                '200':
+                    description: Successful response
+                    content:
+                        'application/json':
+                            schema:
+                                $ref: '#/components/schemas/HelloResponse'
+components:
+    schemas:
+        HelloResponse:
+            description: Response body
+            type: object
+            properties:
+                message:
+                    type: string
+                    description: Greeting
+                    example: Hello World!
