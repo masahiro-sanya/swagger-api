@@ -39,14 +39,8 @@ cdk_apipack
 │   └── sampleProject_restApi.ts    # アプリケーションのエントリポイント
 ├── src                 # 各種ソースファイル
 │   └── lambdas
-│       ├── functions
-│       │   ├── describe_exportTask
-│       │   │   └── describe_exportTask.py
-│       │   ├── describe_logGroups
-│       │   │   └── describe_logGroups.py
-│       │   └── ・・・
-│       └── layer
-│           └── python.zip
+│       ├── hello-function.ts
+│       └── ・・・
 ├── openapi                 # OpenAPI の各種ファイル
 │   ├── spec
 │   │   └── openapi.yaml    #OpenAPI のyamlファイル
