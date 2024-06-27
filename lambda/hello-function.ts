@@ -2,9 +2,12 @@ import { Handler } from 'aws-lambda';
 
 export const handler: Handler = async (event, context) => {
     console.log('EVENT: \n' + JSON.stringify(event, null, 2));
+    const queryParams = event.queryStringParameters;
     const body = {
         code: 'success',
-        message: 'registered',
+        message: queryParams?.name
+            ? `Hello ${queryParams.name}`
+            : 'Hello World!',
     };
 
     const response = {
